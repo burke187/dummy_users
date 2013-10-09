@@ -2,11 +2,16 @@
   <h1>Welcome to Sinatra!</h1>
   <p>Hello, world!</p>
 
-  <form action='/' method='get'>
-    <input type='text' name='user_name' placeholder='Name'>
+  <form action='/' method='post'>
+    <input type='text' name='creation[name]' placeholder='Name'>
     <br>
-    <input type='text' name='email'
-
+    <input type='text' name='creation[email]' placeholder='Email'>
+    <br>
+    <input type='password' name='creation[password]' placeholder='Password'>
+    <input type='submit' value='Create'>
+  </form>
+  <br>
+  <br>
   <table>
     <tr>
       <th>File Description</th>

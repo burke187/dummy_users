@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
-  validates :name, presence: true, uniqueness: true
-  validates :password, presence: true
-  validates :email, presence: true
+  validates_presence_of :name, :password, :email
+  validates :email, uniqueness: true
   def self.authenticate(email, password)
 
   end

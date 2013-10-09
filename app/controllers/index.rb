@@ -20,9 +20,17 @@ end
 
 post '/' do
   if params[:logout]
-    session [:user] = nil
-  else
-end
+    session[:user] = nil
+    erb :index
+  elsif params[:email] && params[:password]
+    authentication = User.authenticate(params[:email], params[:password])
+    if authentication
+      session[:user] = authentication
+      redirect('/secret')
+    else
+      redirect('/')
+    end
+  end
 end
 # params[creation] = { user_name: <whatever they said>, }
 # User.create(params[creation])
